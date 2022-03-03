@@ -1,0 +1,29 @@
+{% include 'admin_header.html' %}
+  <img src="/static/images/bg-1.jpg" alt="desk" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat" style="height:500px; width:1700px;">
+                        </div>
+
+<center>
+	<h1>Supplier Request To Member</h1>
+		<table border="10">
+			<tr>
+				<th>Supplier Name</th>
+				<th>Member Name</th>
+				<th>Description</th>
+				<th>Date for Deliver</th>
+				<th>Status</th>
+				
+				
+			</tr>
+			{% for row in data['request'] %}
+			<tr>
+				<td>{{row['fname']}}</td>
+				<td>{{row['mfname']}}</td>
+				<td>{{row['description']}}</td>
+				<td>{{row['datefordeliver']}}</td>
+				<td>{{row['status']}}</td>
+			
+			</tr>
+			{% endfor %}
+</table>	 			
+</center>
+{% include 'footer.html' %}

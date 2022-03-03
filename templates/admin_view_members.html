@@ -1,0 +1,38 @@
+{% include 'admin_header.html' %}
+
+  <img src="/static/images/bg-1.jpg" alt="desk" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat" style="height:500px; width:1700px;">
+                        </div>
+<center>
+	<h1>View Members</h1>
+	<table border="10">
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Place</th>
+				<th>Phone</th>
+				<th>Email</th>
+				<th>Pincode</th>
+			
+				
+				
+			</tr>
+			{% for row in data['member'] %}
+			<tr>
+				<td>{{row['firstname']}}</td>
+				<td>{{row['lastname']}}</td>
+				<td>{{row['place']}}</td>
+				<td>{{row['phone']}}</td>
+				<td>{{row['email']}}</td>
+				<td>{{row['pincode']}}</td>
+				{% if row['usertype']=='pending' %}
+				<td><a href="?action=accept&lid={{row['login_id']}}">Accept</a></td>
+				<td><a href="?action=reject&lid={{row['login_id']}}">Reject</a></td>
+				{%  else  %}
+				<td>{{row['usertype']}}</td>
+				{% endif %}
+			</tr>
+			{% endfor %}
+	
+</center>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{%  include 'public_header.html' %}
+            
+                        <div><img src="/static/images/pic1.jpg" alt="desk" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat" style="height:500px; width:1700px;">
+                        </div>
+
+        <center>
+							<h1>Login Form</h1>
+							<form method="post">
+							<table class="table"  style="height:200px; width:500px;">
+								<tr>
+									<th>User Name</th>
+									<td><input type="text" class="form-control" name="uname"></td>
+								</tr>
+								<tr>
+									<th>password</th>
+									<td><input type="password" class="form-control" name="pass"></td>
+								</tr>
+							<tr>
+								<td colspan="2"align="center"><input type="submit" class="btn btn-success" name="submit" value="Login">
+								</td>
+							</tr>
+							</table>
+						</form>
+						</center>
+
+
+{% include 'footer.html' %}

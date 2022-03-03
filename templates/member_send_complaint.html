@@ -1,0 +1,35 @@
+{% include 'member_header.html' %}
+<center>
+<h1>Complaint</h1>
+<table>
+	<form method="post">
+	<tr>
+		<th>complaint</th>
+		<td><input type="text" name="Complaint"></td>
+	</tr>		
+	<tr>
+		<td colspan="2"align="center"><input type="submit" name="register" value="SEND"></td>
+	</tr>
+</form>
+</table>	
+ 
+ <h1>view complaint</h1>
+
+<table border="10">
+			<tr>
+				<th>Complaint</th>
+				<th>Reply</th>
+				<th>Date</th>
+			</tr>
+			{% for row in data['complaint'] %}
+			<tr>
+				<td>{{row['complaint']}}</td>
+				<td>{{row['reply']}}</td>
+				<td>{{row['date']}}</td>
+			    
+			</tr>
+		    {% endfor %}
+		    
+</table>
+</center>
+{% include 'footer.html' %}

@@ -1,0 +1,34 @@
+{% include 'member_header.html' %}
+
+
+<center>
+	<h1>SEND REQUEST FOR FOOD</h1>
+	<form method="post">
+		<table>
+			<tr>
+				<th>SUPPLIER</th>
+				<td><select name="sid">
+						{% for row in data['suppliers'] %}
+						<option value="{{row['supplier_id']}}">{{row['firstname']}}</option>
+						{% endfor %}
+				</select></td>
+			</tr>
+			<tr>
+				<th>Food</th>
+					<td><input type="text" name="foodname"></td> 
+				</tr>
+			<tr>
+				<th>Description</th>
+				<td><input type="text" name="des"></td>
+			</tr>
+			<tr>
+				<th>Date for food deliver</th>
+				<td><input type="date" name="dfd"></td>
+			</tr>
+			<tr>
+				<td colspan="2"align="center"><input type="submit" name="submit" value="Request"></td>
+			</tr>
+			</table>
+		</form>
+</center>
+{% include 'footer.html' %}

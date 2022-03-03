@@ -1,0 +1,35 @@
+{% include 'supplier_header.html' %}
+
+
+<center>
+	<h1>view supplier  request</h1>
+		<table border="10">
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Food</th>
+				<th>Description</th>
+				<th>Datef or food deliver</th>
+				<th>Currentdate</th>
+			    <th>Status</th>
+							
+			</tr>
+			{% for row in data['request'] %}
+			<tr>
+				<td>{{row['firstname']}}</td>
+				<td>{{row['lastname']}}</td>
+				<td>{{row['food']}}</td>
+				<td>{{row['description']}}</td>
+				<td>{{row['dateforfooddeliver']}}</td>
+				<td>{{row['currentdate']}}</td>
+				<td>{{row['status']}}</td>
+				{% if row['status']=='pending' %}
+				<td><a href="?action=accept&rid={{row['mrequest_id']}}">Accept</a></td>
+				<td><a href="?action=reject&rid={{row['mrequest_id']}}">Reject</a></td>
+				{% endif %}
+			</tr>
+			{% endfor %}
+		</table>
+</center>
+{% include 'footer.html' %}		
+					

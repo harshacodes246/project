@@ -1,0 +1,29 @@
+{% include 'admin_header.html' %}
+
+  <img src="/static/images/bg-1.jpg" alt="desk" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat" style="height:500px; width:1700px;">
+                        </div>
+
+<center>
+<h1>view complaint</h1>
+<table border="10">
+	<tr>
+		<th>Complaint</th>
+		<th>Reply</th>
+		<th>Date</th>
+	</tr>
+	{% for row in data['complaint'] %}
+	<tr>
+		<td>{{row['complaint']}}</td>
+		{% if row['reply']=="pending" %}
+		<td><a href="admin_send_reply?id={{row['complaint_id']}}">Send Reply</a></td>
+		{% else%}
+		<td>{{row['reply']}}</td>
+		{% endif %}
+		<td>{{row['date']}}</td>
+			    
+	</tr>
+	{% endfor %}
+		    
+</table>
+</center>
+{% include 'footer.html' %}
